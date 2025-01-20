@@ -14,7 +14,7 @@ export default function Home() {
     // the purpose of creating a function inside use effect because we want to use async keyword
     // we shouldn't use async directly in the callback function of useEffect
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/workouts`);
       const json = await response.json();
 
       if (response.ok) {
